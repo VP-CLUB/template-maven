@@ -1,0 +1,29 @@
+target/
+!.mvn/wrapper/maven-wrapper.jar
+app.pid
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+logs
+*.log
+.sonar
+*.epoch
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+tmlog.lck
+target
+moses-svc-user.iml
+### NetBeans ###
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/

@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: template-consumer
+  main:
+    sources: cn.vpclub
+  sleuth:
+    sampler:
+      percentage: 1.0
+
+logging.config: classpath:logback.xml
+
+#undertow config optimize
+server:
+#  context-path: "/moses/user"
+  undertow:
+    io-threads: 2
+    worker-threads: 200
+
+hazelcast:
+  enabled: true
+  cluster: true
+  servers:
+    -  hazelcast.hazelcast-cluster.svc.cluster.local:5701
+

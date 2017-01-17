@@ -1,0 +1,29 @@
+
+server:
+  port: 8081
+
+#dev mode disable zipkin　kubernetes discovery
+spring:
+  cloud:
+    kubernetes:
+      zipkin:
+        discovery:
+          enabled: false
+      discovery:
+        enabled: false
+  cache:
+      type:  hazelcast
+
+hazelcast:
+  enabled: true
+  cluster: true
+  servers:
+    -  172.16.5.90:5701
+
+#grpc:
+#  address: localhost
+#  port: 7575
+
+cors:
+  mappings: /**
+  allowedOrigins:

@@ -1,0 +1,15 @@
+---
+pipeline: "workflows/maven/CanaryReleaseStageAndApprovePromote/Jenkinsfile"
+buildName: "template-consumer"
+codeReview: false
+links:
+  Git: "http://gogs.fabric8.172.16.5.60.nip.io/moses/template-consumer.git"
+  Job: "http://jenkins.fabric8.172.16.5.60.nip.io/job/template-consumer"
+  Production: "http://172.30.47.107:80/kubernetes/pods?namespace=fabric8-production"
+  Staging: "http://172.30.47.107:80/kubernetes/pods?namespace=fabric8-staging"
+  Testing: "http://172.30.47.107:80/kubernetes/pods?namespace=fabric8-testing"
+environments:
+  Testing: "fabric8-testing"
+  Staging: "fabric8-staging"
+  Production: "fabric8-production"
+useLocalFlow: true

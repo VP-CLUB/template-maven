@@ -1,0 +1,75 @@
+syntax = "proto3";
+
+option java_package = "cn.vpclub.moses.user.api";
+option java_outer_classname = "UserProto";
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/struct.proto";
+// The UserService service definition.
+service UserService {
+    // service method
+    rpc addUserVo (UserVo) returns (UserResponse) {
+    }
+    rpc getUserVo (UserVo) returns (UserVo) {
+    }
+    rpc updateUserVo (UserVo) returns (UserResponse) {
+    }
+    rpc deleteUserVo (UserVo) returns (UserResponse) {
+    }
+    rpc queryUserVo (UserRequest) returns (UserVo) {
+    }
+    rpc queryUserVoPageData (UserRequest) returns (PageData) {
+    }
+}
+// The request message containing the user's name.
+message UserRequest {
+    int64 id = 1;
+    int64 appId = 2;
+    string username = 3;
+    string password = 4;
+    int32 plateformId = 5;
+    string plateformUid = 6;
+    int32 status = 7;
+}
+//user info transfer
+message UserVo {
+    int64 id = 1;
+    int64 appId = 2;
+    string username = 3;
+    string password = 4;
+    string nickname = 5;
+    string email = 6;
+    int32 certificatesType = 7;
+    string certificatesNumber = 8;
+    string phoneNumber = 9;
+    int32 gender = 10;
+    string avatar = 11;
+    int32 isCertificated = 12;
+    int32 status = 13;
+    string qqUid = 14;
+    int64 qqBindTime = 15;
+    int64 qqUnbindTime = 16;
+    int32 qqBindStatus = 17;
+    string wechatUid = 18;
+    int64 wechatBindTime = 19;
+    int64 wechatUnbindTime = 20;
+    int32 wechatBindStatus = 21;
+    string weiboUid = 22;
+    int64 weiboBindTime = 23;
+    int64 weiboUnbindTime = 24;
+    int32 weiboBindStatus = 25;
+    int64 registerDate = 26;
+    int64 updateDate = 27;
+    string salt = 28;
+    string identityCardFront = 29;
+    string identityCardBack = 30;
+}
+message UserResponse {
+    int32 returnCode = 1;
+    string message = 2;
+    UserVo userVo = 3;
+}
+message PageData {
+    int32 returnCode = 1;
+    string message = 2;
+    google.protobuf.ListValue userVos = 3;
+}

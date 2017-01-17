@@ -1,0 +1,4 @@
+metadata:
+  labels:
+    expose: true
+    hystrix.enabled: true

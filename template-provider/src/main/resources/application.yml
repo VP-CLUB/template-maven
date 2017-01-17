@@ -1,0 +1,88 @@
+
+# application properties
+app:
+  datasource:
+    name: moses_user
+    host: 172.16.5.90:3306
+    username: kfman
+## kfman123!
+    password: Q19ejJxkjZ7k4Qtjbctm+BJhaEB9OpFhmLbvesu0WX1yoxmow1eiY27NEnsfGteXu+bySu4cBWFX/UsLsOsuFw==
+    druid:
+      public-key: MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAMKbIPGAsMXcOapeeAf3MqoZzLDNCUwKaZ7dK6UgTq74ZPpPtyMJur4PnGsi+LfWfSvSfyyyvPHZWIM6olD5HhMCAwEAAQ==
+
+spring:
+  # 数据库配置
+  datasource:
+    name: ${app.datasource.name}
+    url: jdbc:mysql://${app.datasource.host}/${app.datasource.name}?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true
+    username: ${app.datasource.username}
+    password: ${app.datasource.password}
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    # 使用druid数据源
+    druid:
+      max-active: 20
+      initial-size: 1
+      max-wait: 60000
+      min-idle: 1
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      validation-query: SELECT 'x' FROM DUAL
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      pool-prepared-statements: false
+      max-open-prepared-statements: 20
+      # encrypt password
+      filters: config,stat,wall,log4j
+      connection-properties: "config.decrypt=true;config.decrypt.key=${app.datasource.druid.public-key};druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000"
+      use-global-data-source-stat: true
+
+  http:
+    encoding.charset: UTF-8
+    encoding.enable: true
+    encoding.force: true
+  aop:
+    proxy-target-class: true
+
+  application:
+     name: moses-user-provider
+
+#spring-cloud zipkin
+  sleuth:
+     sampler:
+       percentage: 1.0
+#  cache:
+#    type: generic
+
+mybatis:
+  config-location : "classpath:mybatis-config.xml"
+  #checkConfig-location : false
+  mapper-locations : "classpath:mapper/*Mapper.xml"
+
+hazelcast:
+  enabled: true
+  cluster: true
+  servers:
+    -  hazelcast.hazelcast-cluster.svc.cluster.local:5701
+#kafka
+kafka:
+  broker: kafka.kafka.svc.cluster.local:9092
+  topic: topic1
+  group: si.group
+  partions: 6
+  timeout: 15000
+
+# LOGGING
+logging:
+  level:
+    tk.mybatis: DEBUG
+cors:
+  mappings: /**
+  allowedOrigins:
+
+#undertow config optimize
+server:
+  undertow:
+    io-threads: 2
+    worker-threads: 100

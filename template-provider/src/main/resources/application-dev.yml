@@ -1,0 +1,47 @@
+# application properties
+#dev mode disable zipkin must place here
+spring:
+  cloud:
+    kubernetes:
+      zipkin:
+        discovery:
+          enabled: false
+
+app:
+  datasource:
+    name: moses_user
+    host: 172.16.5.90:3306
+    username: kfman
+    password: Q19ejJxkjZ7k4Qtjbctm+BJhaEB9OpFhmLbvesu0WX1yoxmow1eiY27NEnsfGteXu+bySu4cBWFX/UsLsOsuFw==
+    druid:
+      public-key: MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAMKbIPGAsMXcOapeeAf3MqoZzLDNCUwKaZ7dK6UgTq74ZPpPtyMJur4PnGsi+LfWfSvSfyyyvPHZWIM6olD5HhMCAwEAAQ==
+
+hazelcast:
+  enabled: true
+  cluster: true
+  servers:
+    -  172.16.5.90:5701
+
+#kafka
+kafka:
+  broker: 172.16.5.90:9092
+  topic: topic1
+  group: si.group
+  partions: 6
+  timeout: 15000
+
+druid:
+  allow: 172.16.5.23
+
+
+
+
+
+
+
+
+
+
+
+
+

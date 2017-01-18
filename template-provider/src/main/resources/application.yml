@@ -3,7 +3,7 @@
 app:
   datasource:
     name: moses_user
-    host: 172.16.5.90:3306
+    host: 172.16.5.201:3306
     username: kfman
 ## kfman123!
     password: Q19ejJxkjZ7k4Qtjbctm+BJhaEB9OpFhmLbvesu0WX1yoxmow1eiY27NEnsfGteXu+bySu4cBWFX/UsLsOsuFw==

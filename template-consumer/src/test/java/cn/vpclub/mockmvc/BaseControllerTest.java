@@ -17,6 +17,7 @@ import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
+import org.testng.annotations.BeforeMethod;
 
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.DEFINED_PORT;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -26,16 +27,15 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * Created by Administrator on 2016/3/11.
  * 基础测试 抽象类
  */
-@RunWith(SpringRunner.class)
 @SpringBootTest(classes = {Application.class}, webEnvironment = DEFINED_PORT)
-public abstract class BaseMockMvcTest {
+public abstract class BaseControllerTest {
 
     protected MockMvc mockMvc;
 
     @Autowired
     protected WebApplicationContext context;
 
-    @Before
+    @BeforeMethod
     public void setupMockMvc() {
         MockitoAnnotations.initMocks(this);
         mockMvc = MockMvcBuilders.webAppContextSetup(context).build();

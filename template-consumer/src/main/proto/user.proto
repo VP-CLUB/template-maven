@@ -71,5 +71,5 @@ message UserResponse {
 message PageData {
     int32 returnCode = 1;
     string message = 2;
-    google.protobuf.ListValue userVos = 3;
+    repeated UserVo userVos = 3;
 }

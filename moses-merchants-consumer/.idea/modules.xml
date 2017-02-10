@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../moses/moses-merchants-admin-consumer/moses-merchants-admin-consumer.iml" filepath="$PROJECT_DIR$/../../moses/moses-merchants-admin-consumer/moses-merchants-admin-consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../moses/moses-merchants-consumer/moses-merchants-consumer.iml" filepath="$PROJECT_DIR$/../../moses/moses-merchants-consumer/moses-merchants-consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../moses/moses-merchants-provider/moses-merchants-provider.iml" filepath="$PROJECT_DIR$/../../moses/moses-merchants-provider/moses-merchants-provider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../moses/spring-boot-starters/spring-boot-starter-cors/spring-boot-starter-cors.iml" filepath="$PROJECT_DIR$/../../moses/spring-boot-starters/spring-boot-starter-cors/spring-boot-starter-cors.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../moses/spring-boot-starters/spring-boot-starter-dubbo/spring-boot-starter-dubbo.iml" filepath="$PROJECT_DIR$/../../moses/spring-boot-starters/spring-boot-starter-dubbo/spring-boot-starter-dubbo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../moses/spring-boot-starters/spring-boot-starter-grpc/spring-boot-starter-grpc.iml" filepath="$PROJECT_DIR$/../../moses/spring-boot-starters/spring-boot-starter-grpc/spring-boot-starter-grpc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../moses/spring-boot-starters/spring-boot-starter-hazelcast/spring-boot-starter-hazelcast.iml" filepath="$PROJECT_DIR$/../../moses/spring-boot-starters/spring-boot-starter-hazelcast/spring-boot-starter-hazelcast.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../moses/spring-boot-starters/spring-boot-starter-kafka/spring-boot-starter-kafka.iml" filepath="$PROJECT_DIR$/../../moses/spring-boot-starters/spring-boot-starter-kafka/spring-boot-starter-kafka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../moses/spring-boot-starters/spring-boot-starter-mybatis/spring-boot-starter-mybatis.iml" filepath="$PROJECT_DIR$/../../moses/spring-boot-starters/spring-boot-starter-mybatis/spring-boot-starter-mybatis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../moses/spring-boot-starters/spring-boot-starter-shiro/spring-boot-starter-shiro.iml" filepath="$PROJECT_DIR$/../../moses/spring-boot-starters/spring-boot-starter-shiro/spring-boot-starter-shiro.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../moses/spring-boot-starters/spring-boot-starters.iml" filepath="$PROJECT_DIR$/../../moses/spring-boot-starters/spring-boot-starters.iml" />
+    </modules>
+  </component>
+</project>

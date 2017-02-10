@@ -6,19 +6,21 @@
 
     <groupId>cn.vpclub</groupId>
     <artifactId>template-consumer</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.5</version>
 
     <name>template-consumer</name>
     <description>template-consumer</description>
     <parent>
         <groupId>cn.vpclub</groupId>
         <artifactId>spring-boot-starters</artifactId>
-        <version>1.0.4</version>
+        <version>1.0.5</version>
     </parent>
     <properties>
         <!-- dependency versions -->
+        <vp-common.version>1.0.3</vp-common.version>
+        <moses-sms.version>1.0.0</moses-sms.version>
         <fabric8.version>2.2.168</fabric8.version>
-        <fabric8.maven.plugin.version>3.1.71</fabric8.maven.plugin.version>
+        <fabric8.maven.plugin.version>3.1.79</fabric8.maven.plugin.version>
         <spring-cloud-starter-kubernetes.version>0.1.4</spring-cloud-starter-kubernetes.version>
     </properties>
 
@@ -78,10 +80,17 @@
         <dependency>
             <groupId>cn.vpclub</groupId>
             <artifactId>vp-common-api</artifactId>
+            <version>${vp-common.version}</version>
         </dependency>
         <dependency>
             <groupId>cn.vpclub</groupId>
             <artifactId>vp-common-tools</artifactId>
+            <version>${vp-common.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.vpclub</groupId>
+            <artifactId>moses-sms</artifactId>
+            <version>${moses-sms.version}</version>
         </dependency>
 
     </dependencies>
@@ -104,11 +113,22 @@
                 <groupId>org.xolstice.maven.plugins</groupId>
                 <artifactId>protobuf-maven-plugin</artifactId>
             </plugin>
-			 <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-archetype-plugin</artifactId>
-            <version>2.4</version>
-        </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-archetype-plugin</artifactId>
+                <version>2.4</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <inherited>true</inherited>
+                <configuration>
+                    <excludes>
+                        <exclude>**/*IntegrationTest.java</exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+
         </plugins>
         <extensions>
             <extension>
@@ -147,15 +167,15 @@
             </activation>
             <dependencies>
                 <!-- spring-cloud -->
-                <dependency>
-                    <groupId>org.springframework.cloud</groupId>
-                    <artifactId>spring-cloud-starter-hystrix</artifactId>
-                </dependency>
-                <dependency>
-                    <groupId>io.fabric8</groupId>
-                    <artifactId>spring-cloud-starter-kubernetes-zipkin</artifactId>
-                    <version>${spring-cloud-starter-kubernetes.version}</version>
-                </dependency>
+                <!--<dependency>-->
+                <!--<groupId>org.springframework.cloud</groupId>-->
+                <!--<artifactId>spring-cloud-starter-hystrix</artifactId>-->
+                <!--</dependency>-->
+                <!--<dependency>-->
+                <!--<groupId>io.fabric8</groupId>-->
+                <!--<artifactId>spring-cloud-starter-kubernetes-zipkin</artifactId>-->
+                <!--<version>${spring-cloud-starter-kubernetes.version}</version>-->
+                <!--</dependency>-->
             </dependencies>
             <build>
                 <plugins>
@@ -166,17 +186,7 @@
                             <target>1.8</target>
                         </configuration>
                     </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-surefire-plugin</artifactId>
-                        <inherited>true</inherited>
-                        <configuration>
-                            <argLine>-Djava.security.egd=file:/dev/./urandom</argLine>
-                            <excludes>
-                                <exclude>**/*KT.java</exclude>
-                            </excludes>
-                        </configuration>
-                    </plugin>
+
 
                     <plugin>
                         <groupId>org.springframework.boot</groupId>
@@ -197,15 +207,7 @@
                         </executions>
                     </plugin>
                 </plugins>
-                <!--<extensions>-->
-                <!--<extension>-->
-                <!--<groupId>org.apache.maven.wagon</groupId>-->
-                <!--<artifactId>wagon-webdav-jackrabbit</artifactId>-->
-                <!--<version>2.10</version>-->
-                <!--</extension>-->
-                <!--</extensions>-->
             </build>
         </profile>
     </profiles>
-
 </project>

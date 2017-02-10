@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="moses-merchants-admin-consumer" />
+        <module name="moses-merchants-consumer" />
+        <module name="moses-merchants-provider" />
+        <module name="spring-boot-starter-cors" />
+        <module name="spring-boot-starter-dubbo" />
+        <module name="spring-boot-starter-grpc" />
+        <module name="spring-boot-starter-hazelcast" />
+        <module name="spring-boot-starter-kafka" />
+        <module name="spring-boot-starter-mybatis" />
+        <module name="spring-boot-starter-shiro" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="moses-merchants-admin-consumer" target="1.8" />
+      <module name="moses-merchants-consumer" target="1.8" />
+      <module name="moses-merchants-provider" target="1.8" />
+      <module name="spring-boot-starter-cors" target="1.8" />
+      <module name="spring-boot-starter-dubbo" target="1.8" />
+      <module name="spring-boot-starter-grpc" target="1.8" />
+      <module name="spring-boot-starter-hazelcast" target="1.8" />
+      <module name="spring-boot-starter-kafka" target="1.8" />
+      <module name="spring-boot-starter-mybatis" target="1.8" />
+      <module name="spring-boot-starter-shiro" target="1.8" />
+      <module name="spring-boot-starters" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

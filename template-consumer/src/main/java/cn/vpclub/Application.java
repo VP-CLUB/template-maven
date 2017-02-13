@@ -15,11 +15,16 @@
  */
 package cn.vpclub;
 
+import cn.vpclub.spring.boot.cors.autoconfigure.CorsConfiguration;
+import cn.vpclub.spring.boot.cors.autoconfigure.CorsProperties;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.boot.system.ApplicationPidFileWriter;
+import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
+@EnableConfigurationProperties({CorsProperties.class})
 public class Application {
 
     public static void main(String[] args) {
@@ -29,5 +34,8 @@ public class Application {
                 new ApplicationPidFileWriter("app.pid"));
         application.run(args);
     }
-
+    @Bean
+    public CorsConfiguration corsConfiguration(){
+        return new CorsConfiguration();
+    }
 }
